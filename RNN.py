@@ -15,8 +15,7 @@ FUTURE_PERIOD_PREDICT = 3  # how far into the future are we trying to predict?
 RATIO_TO_PREDICT = "BTC-USD"
 EPOCHS = 17  # how many passes through our data
 BATCH_SIZE = 64  # how many batches? Try smaller batch if you're getting OOM (out of memory) errors.
-NAME = f"{SEQ_LEN}-SEQ-{FUTURE_PERIOD_PREDICT}-PRED-{int(time.time())}"  # a unique name for the model
-
+NAME = f"{RATIO_TO_PREDICT}-{SEQ_LEN}-{FUTURE_PERIOD_PREDICT}-{int(time.time())}"
 
 def classify(current, future):
     if float(future) > float(current):
